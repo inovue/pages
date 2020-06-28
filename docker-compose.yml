@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  app:
+    image: jekyll/jekyll
+    #image: jekyll/jekyll:pages
+    #tty: true
+    #command: /bin/bash
+    #command: bash -c 'bundler install && bundler exec jekyll serve --force_polling'
+    #command: bundler exec jekyll serve --force_polling
+    command: jekyll serve --force_polling
+    
+    volumes:
+      #- ./jekyll:/srv/jekyll
+      - .:/srv/jekyll
+    ports:
+      - 4001:4000
